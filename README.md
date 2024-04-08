@@ -17,5 +17,5 @@ A parte referente ao backend, utilizando o framework Laravel, foi desenvolvida c
 abrangendo desde a instalação do Laravel até a disponibilização de uma API funcional.
 
 No entanto, a intregação do frontend com o framework Angular não foi finalizada dentro do prazo estabelecido. 
-Apesar de termos criado componentes, configurado rotas para navegação e iniciado o consumo da API Laravel, 
+Apesar de ter criado componentes, configurado rotas para navegação e iniciado o consumo da API Laravel, 
 o processo de exibição dos dados obtidos não foi concluído.
