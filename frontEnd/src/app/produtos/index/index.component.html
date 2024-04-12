@@ -1,0 +1,36 @@
+<div class="container">
+    <h1 class="text-center">CRUD Produto</h1>
+    <a href="#" routerLink="/produtos/adicionar/" class="btn btn-success">Adicionar Produtos</a>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nomes Produtos</th>
+                <th>Valor Produtos</th>
+                <th>Data Vencimento</th>
+                <th>Quantidade de Estoque</th>
+                <th>Produto Prerecível</th>
+                <th>Categoria</th>
+                <th width="250px">Ações</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let produtos of produto">
+                <td>{{produtos.id}}</td>
+                <td>{{produtos.nomeProduto}}</td>
+                <td>{{produtos.valorProduto | currency:'BRL':'symbol':'1.2-2' }}</td>
+                <td>{{produtos.dataVencimento | date : 'dd/MM/YYYY'}}</td>
+                <td>{{produtos.quantEstoque}}</td>
+                <td>{{produtos.produtoPerecivel}}</td>
+                <td>{{produtos.categoria?.nome}}</td>
+                <td>
+                    <mat-icon class="custom-view-icon" routerLink="/produtos/visualizar/{{produtos.id}}/">visibility</mat-icon>
+                    <mat-icon class="custom-nice-edit-icon" routerLink="/produtos/editar/{{produtos.id}}">edit_square</mat-icon>
+                    <mat-icon class="custom-delete-icon" (click)="delete(produtos.id)">delete</mat-icon>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

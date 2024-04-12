@@ -1,0 +1,76 @@
+
+<h1 class="text-center">Novo Produto</h1>
+
+<form #userForm="ngForm" [formGroup]="formulario" (ngSubmit)="submit()">
+    <div class="card imgholder">
+        
+        <img src="https://www.ufpb.br/cras/contents/imagens/cadastro.jpg/@@images/image.jpeg" alt="" width="200" height="200">
+    </div>
+    <div class="inputField" id="userForm">
+        <div>
+            <label for="cargo" >Nome Produto:</label>
+            <input type="text" name="nomeProduto" id="cargo" minlength="3" maxlength="30"  formControlName="nomeProduto" required>
+            <!--<div class="text-danger" *ngIf="nomeProduto.invalid && (nomeProduto.touched || nomeProduto.dirty)">
+                <span *ngIf="nomeProduto.errors?.['required']">Nome do Produto é Obrigatório</span>
+                <span *ngIf="nomeProduto.errors?.['minlength']">Nome do Produto deve ter pelo menos 3 caractere</span>
+            </div>-->
+        </div>
+
+        <div>
+            <label for="cargo" >Valor Produto:</label>
+            <input type="number" name="valorProduto" id="cargo" formControlName="valorProduto">
+
+            <!--<div class="text-danger" *ngIf="valorProduto.invalid && (valorProduto.touched || valorProduto.dirty)">
+                <span *ngIf="valorProduto.errors?.['required']">Valor do Produto é Obrigatório</span>
+                <span *ngIf="valorProduto.errors?.['min']">Valor do Produto nõa pode ser negativo</span>
+            </div>-->
+        </div>
+
+        <div>
+            
+            <mat-form-field class="example-full-width">
+                <label for="cargo" >Data Vencimento:</label>
+                <input matInput [matDatepicker]="dp3" name="dataVencimento" formControlName="dataVencimento">
+                <mat-datepicker-toggle matIconSuffix [for]="dp3"></mat-datepicker-toggle>
+                <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+                
+              </mat-form-field>
+              <!--<div class="text-danger" *ngIf="dataVencimento.invalid && (dataVencimento.touched || dataVencimento.dirty)">
+                <span *ngIf="dataVencimento.errors?.['required']">A data de Vencimento é Obrigatório</span>
+            </div>-->
+        </div>
+
+        <div>
+            <label for="cargo" >Quantidade de Estoque:</label>
+            <input type="number" name="quantEstoque" id="cargo" formControlName="quantEstoque">
+            <!--<div class="text-danger" *ngIf="quantEstoque.invalid && (quantEstoque.touched || quantEstoque.dirty)">
+                <span *ngIf="quantEstoque.errors?.['required']">Quantidade do Estoque é Obrigatório</span>
+                <span *ngIf="quantEstoque.errors?.['min']">Quantidade do Estoque não pode ser negativo</span>
+            </div>-->
+        </div>
+
+        <div>
+            
+            <mat-radio-group  formControlName="produtoPerecivel">
+                <label for="cargo" >Produto Perecivel:</label>
+                <mat-radio-button class="example-margin"  [value]="true" >Sim</mat-radio-button>
+                <mat-radio-button class="example-margin" [value]="false" >Não</mat-radio-button>
+            </mat-radio-group>
+        </div>
+
+        <div>
+            <label for="editFuncionarioCar" >Categoria:</label>
+            <select id="editFuncionarioCar" formControlName="categoria_id">
+                <option *ngFor="let categoria of categorias" [value]="categoria.id">
+                    {{categoria.nome}}
+                </option>
+                
+                
+            </select>
+        </div>
+
+        <div >
+            <input type="submit" class="btn btn-primary submit" value="Salvar" >
+        </div>
+    </div>
+</form>

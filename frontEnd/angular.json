@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "crud-produtos": {
+    "Grud-Produtos": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/crud-produtos",
+            "outputPath": "dist/grud-produtos",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -25,16 +25,11 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "node_modules/font-awesome/css/font-awesome.css",
+              "src/styles.css"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -64,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "crud-produtos:build:production"
+              "buildTarget": "Grud-Produtos:build:production"
             },
             "development": {
-              "buildTarget": "crud-produtos:build:development"
+              "buildTarget": "Grud-Produtos:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +70,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "crud-produtos:build"
+            "buildTarget": "Grud-Produtos:build"
           }
         },
         "test": {
@@ -91,6 +86,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -100,6 +96,6 @@
     }
   },
   "cli": {
-    "analytics": "9ed25a9f-22ad-4938-a12d-1d858871e083"
+    "analytics": "80272d2d-3496-447b-bd3c-16c80d9d4a37"
   }
 }
