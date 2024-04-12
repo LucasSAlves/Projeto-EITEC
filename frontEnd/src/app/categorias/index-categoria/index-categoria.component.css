@@ -1,0 +1,21 @@
+tbody td {
+    margin: 5px;
+}
+
+.custom-nice-edit-icon {
+    color: #0d6efd; /* Cor roxa */
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.custom-view-icon {
+    color: #198754; /* Cor verde */
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.custom-delete-icon {
+    color: #dc3545; /* Cor verde */
+    font-size: 25px;
+    cursor: pointer;
+}

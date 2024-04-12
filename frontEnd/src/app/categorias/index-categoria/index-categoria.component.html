@@ -1,1 +1,29 @@
-<p>index-categoria works!</p>
+<div class="container">
+    <nav class="navbar " data-bs-theme="dark">
+        <h1>Categoria</h1>
+        <a href="#" routerLink="/produtos/index/" class="btn btn-outline-success">Produtos</a>
+    </nav>
+    <a href="#" routerLink="/categorias/adicionar/" class="btn btn-success">Adicionar Categoria</a>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nomes</th>
+                <th width="250px">Ações</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let categorias of categoria">
+                <td>{{categorias.id}}</td>
+                <td>{{categorias.nome}}</td>
+                <td>
+                    <mat-icon class="custom-view-icon" routerLink="/categorias/visualizar/{{categorias.id}}/">visibility</mat-icon>
+                    <mat-icon class="custom-nice-edit-icon" routerLink="/categorias/editar/{{categorias.id}}">edit_square</mat-icon>
+                    <mat-icon class="custom-delete-icon" (click)="delete(categorias.id)">delete</mat-icon>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,1 +1,17 @@
-<p>editar-categoria works!</p>
+<h1 class="text-center">Editar Categoria</h1>
+
+<form #userForm="ngForm" [formGroup]="formulario" (ngSubmit)="submit()">
+    <div class="card imgholder">
+        
+        <img src="https://www.ufpb.br/cras/contents/imagens/cadastro.jpg/@@images/image.jpeg" alt="" width="200" height="200">
+    </div>
+    <div class="inputField" id="userForm">
+        <div>
+            <label for="cargo" >Nome:</label>
+            <input type="text" name="nome" id="cargo" minlength="3" maxlength="30"  formControlName="nome" required [(ngModel)]="categorias.nome">
+        </div>
+        <div >
+            <input type="submit" class="btn btn-primary submit" value="Salvar" >
+        </div>
+    </div>
+</form>
